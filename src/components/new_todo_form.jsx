@@ -7,14 +7,18 @@ class NewTodoForm extends React.Component {
     super(props);
     this.state = {todo: ''}
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.idIncrementor = 1;
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    // const todoList = document.getElementById('todo-list');
-    // const newListItem = <TodoListItem body={this.state.todo} />;
-    // todoList.appendChild(newListItem);
-    
+    this.props.createTodo(
+      {
+        id: this.idIncrementor,
+        body: this.state.todo
+      }
+    );
+    this.idIncrementor += 1;
   }
 
   update(field) {

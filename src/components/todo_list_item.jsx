@@ -10,7 +10,8 @@ class TodoListItem extends React.Component {
       <li className="todo-list-item">
         <span>{this.props.body}</span>
         <input type="checkbox" />
-        <button className="todo-list-item-button">Remove</button>
+        <button className="todo-list-item-button"
+          onClick={this.props.deleteTodo.bind(this, this.props.id)}>Remove</button>
       </li>
     );
   }

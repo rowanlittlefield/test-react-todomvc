@@ -23,7 +23,7 @@ const TodoList = ({todos}) => {
 
   return (
     <div className="todo-list-div">
-      <span className="todo-list-header">
+      <span className="todo-list-counter">
         <strong>{numTodos}</strong> item{numTodos === 1 ? '' : 's'}
       </span>
       {renderList()}

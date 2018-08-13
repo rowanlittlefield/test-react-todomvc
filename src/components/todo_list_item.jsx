@@ -25,7 +25,7 @@ class TodoListItem extends React.Component {
           checked={todo.completed}/>
         <button className="todo-list-item-button"
           onClick={this.props.destroy.bind(this, todo.id)}>
-          <div>
+          <div className="todo-list-item-button-text">
             Remove
           </div>
         </button>

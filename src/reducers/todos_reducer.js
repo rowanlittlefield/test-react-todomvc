@@ -1,4 +1,4 @@
-import { RECEIVE_TODO, REMOVE_TODO } from '../utils/todos_util';
+import { RECEIVE_TODO, REMOVE_TODO } from '../utils/todos_redux_actions';
 import { merge } from 'lodash';
 
 const todosReducer = (state = {}, action) => {

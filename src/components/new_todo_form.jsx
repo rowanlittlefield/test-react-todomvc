@@ -13,26 +13,27 @@ class NewTodoForm extends React.Component {
     this.idIncrementor = 1;
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    if (this.state.todo !== '') {
+  handleSubmit(event) {
+    event.preventDefault();
+    const nextTodo = this.state.todo.trim()
+    if (nextTodo !== '') {
       this.props.create(
         {
           id: this.idIncrementor,
-          body: this.state.todo.trim(),
+          body: nextTodo,
           completed: false
         }
       );
       this.idIncrementor += 1;
-      this.setState({todo: ''});
+      this.setState({ todo: '' });
     } else {
-      this.setState({error: true})
+      this.setState({ error: true })
     }
   }
 
-  update(field) {
-    return e => {
-      return this.setState({[field]: e.currentTarget.value});
+  update(formField) {
+    return event => {
+      return this.setState({ [formField]: event.currentTarget.value });
     };
   }
 
@@ -45,7 +46,7 @@ class NewTodoForm extends React.Component {
   }
 
   clearErrors() {
-    if (this.state.error) this.setState({error: false});
+    if (this.state.error) this.setState({ error: false });
   }
 
   render() {
@@ -60,7 +61,7 @@ class NewTodoForm extends React.Component {
             className="new-todo-form-inputs-text"
             value={this.state.todo}
             onChange={this.update('todo')}
-            placeholder="New"
+            placeholder="New to-do goes here!"
             autoFocus="true"/>
           <input className="new-todo-form-inputs-submit"
             type="submit"

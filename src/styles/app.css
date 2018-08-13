@@ -40,12 +40,14 @@ ul {
   border: 1px solid lightgrey;
   height: 16px;
   width: 180px;
+  padding-left: 5px;
 }
 
 .new-todo-form-inputs-submit {
   height: 20px;
   font-size: 14px;
   font-weight: 700;
+  line-height: 5px;
 
   background-color: rgba(17, 17, 17, 0.03);
   border: 1px solid lightgrey;
@@ -58,7 +60,7 @@ ul {
   align-items: center;
 }
 
-.todo-list-header {
+.todo-list-counter {
   display: block;
   padding-bottom: 10px;
 }
@@ -70,6 +72,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   position: relative;
+  word-break: break-word;
 }
 
 .completed {
@@ -92,11 +95,11 @@ ul {
   outline: 0;
 }
 
-.todo-list-item-button > div {
+.todo-list-item-button-text {
   padding: 0 5px;
 }
 
-.todo-list-item-button > div:hover {
+.todo-list-item-button > .todo-list-item-button-text:hover {
   background-color: rgba(17, 17, 17, 0.1);
 }
 

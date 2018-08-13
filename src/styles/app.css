@@ -43,13 +43,28 @@ body {
   margin-left: -1px;
 }
 
+.todo-list-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .todo-list {
+}
+
+.todo-list-header {
+  display: block;
+  padding-bottom: 10px;
 }
 
 .todo-list-item {
   display: flex;
   flex-direction: row;
   position: relative;
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 .todo-list-item-button {

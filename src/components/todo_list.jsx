@@ -3,7 +3,7 @@ import TodoListItemContainer from '../containers/todo_list_item_container';
 
 class TodoList extends React.Component {
 
-  render() {
+  renderList() {
     if(this.props.todos.length === 0) return null;
 
     const todoListItems = this.props.todos.map((todo, idx) => {
@@ -13,11 +13,21 @@ class TodoList extends React.Component {
     });
 
     return (
-      <div>
-        <span>Number of todos: {this.props.todos.length}</span>
-        <ul id="todo-list" className="todo-list">
-          {todoListItems}
-        </ul>
+      <ul id="todo-list" className="todo-list">
+        {todoListItems}
+      </ul>
+    );
+  }
+
+  render() {
+    const numTodos = this.props.todos.length;
+
+    return (
+      <div className="todo-list-div">
+        <span className="todo-list-header">
+          <strong>{numTodos}</strong> item{numTodos === 1 ? '' : 's'}
+        </span>
+        {this.renderList()}
       </div>
     );
   }

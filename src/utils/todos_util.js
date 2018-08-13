@@ -11,7 +11,7 @@ export const removeTodo = id => ({
   id
 });
 
-export const createTodo = todo => dispatch => {
+export const saveTodo = todo => dispatch => {
   return dispatch(receiveTodo(todo));
 };
 

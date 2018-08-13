@@ -16,7 +16,7 @@ class NewTodoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.todo !== '') {
-      this.props.createTodo(
+      this.props.create(
         {
           id: this.idIncrementor,
           body: this.state.todo.trim(),

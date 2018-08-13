@@ -4,7 +4,7 @@ import NewTodoForm from '../components/new_todo_form';
 import { saveTodo } from '../utils/todos_util';
 
 const mapDispatchToProps = dispatch => ({
-  createTodo: todo => dispatch(saveTodo(todo))
+  create: todo => dispatch(saveTodo(todo))
 });
 
 export default connect(null, mapDispatchToProps)(NewTodoForm);

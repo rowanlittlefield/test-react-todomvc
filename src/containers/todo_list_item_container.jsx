@@ -4,7 +4,7 @@ import TodoListItem from '../components/todo_list_item';
 import { deleteTodo } from '../utils/todos_util';
 
 const mapDispatchToProps = dispatch => ({
-  deleteTodo: id => dispatch(deleteTodo(id))
+  destroy: id => dispatch(deleteTodo(id))
 });
 
 export default connect(null, mapDispatchToProps)(TodoListItem);

@@ -30,13 +30,17 @@ body {
   top: -16px;
 }
 
-.new-todo-form-input {
+.new-todo-form-inputs-text {
+  font-size: 14px;
   border: 1px solid lightgrey;
-  height: 13px;
+  height: 16px;
+  width: 180px;
 }
 
-.new-todo-form-submit {
-  height: 17px;
+.new-todo-form-inputs-submit {
+  height: 20px;
+  font-size: 14px;
+  font-weight: 700;
 
   background-color: rgba(17, 17, 17, 0.03);
   border: 1px solid lightgrey;
@@ -49,17 +53,17 @@ body {
   align-items: center;
 }
 
-.todo-list {
-}
-
 .todo-list-header {
   display: block;
   padding-bottom: 10px;
 }
 
 .todo-list-item {
+  width: 200px;
+
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -84,7 +88,6 @@ body {
 }
 
 .todo-list-item-button > div {
-  /*font-size: 12px;*/
   padding: 0 5px;
 }
 

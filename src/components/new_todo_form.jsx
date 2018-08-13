@@ -10,6 +10,7 @@ class NewTodoForm extends React.Component {
       error: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
     this.idIncrementor = 1;
   }
 
@@ -50,18 +51,18 @@ clearErrors() {
   render() {
     return (
       <form onSubmit={this.handleSubmit}
-        onClick={this.clearErrors.bind(this)}
-        onKeyDown={this.clearErrors.bind(this)}
+        onClick={this.clearErrors}
+        onKeyDown={this.clearErrors}
         className="new-todo-form">
         {this.renderErrors()}
         <div className="new-todo-form-inputs">
           <input type="text"
-            className="new-todo-form-input"
+            className="new-todo-form-inputs-text"
             value={this.state.todo}
             onChange={this.update('todo')}
             placeholder="New"
             autoFocus="true"/>
-          <input className="new-todo-form-submit"
+          <input className="new-todo-form-inputs-submit"
             type="submit"
             value="+" />
         </div>
@@ -71,11 +72,3 @@ clearErrors() {
 }
 
 export default NewTodoForm;
-
-// <ul className="session-errors">
-//   {this.props.errors.map((error, i) => (
-//     <li key={`error-${i}`}>
-//       {error}
-//     </li>
-//   ))}
-// </ul>

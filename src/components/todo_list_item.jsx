@@ -10,19 +10,27 @@ class TodoListItem extends React.Component {
   }
 
   toggleCompleted() {
-    this.setState({completed: !this.state.completed});
+    const todo = this.props.todo
+    this.props.update(
+      {
+        id: todo.id,
+        body: todo.body,
+        completed: !todo.completed
+      }
+    );
   }
 
   render() {
-    const completed = this.state.completed;
-
+    const todo = this.props.todo
+    const completed = todo.completed;
+    
     return (
       <li className={"todo-list-item" + (completed ? ' completed' : '')}>
-        <span>{this.props.body}</span>
+        <span>{todo.body}</span>
         <input type="checkbox"
           onClick={this.toggleCompleted.bind(this)} />
         <button className="todo-list-item-button"
-          onClick={this.props.destroy.bind(this, this.props.id)}>
+          onClick={this.props.destroy.bind(this, todo.id)}>
           <div>
             Remove
           </div>

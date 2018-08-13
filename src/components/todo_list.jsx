@@ -8,7 +8,7 @@ const TodoList = ({todos}) => {
 
     const todoListItems = todos.map((todo, idx) => {
       return (
-        <TodoListItemContainer key={idx} body={todo.body} id={todo.id} />
+        <TodoListItemContainer key={idx} todo={todo} />
       );
     });
 

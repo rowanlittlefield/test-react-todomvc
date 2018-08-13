@@ -1,5 +1,4 @@
 import React from 'react';
-import TodoListItem from './todo_list_item';
 
 class NewTodoForm extends React.Component {
 
@@ -20,7 +19,8 @@ class NewTodoForm extends React.Component {
       this.props.createTodo(
         {
           id: this.idIncrementor,
-          body: this.state.todo.trim()
+          body: this.state.todo.trim(),
+          completed: false
         }
       );
       this.idIncrementor += 1;
@@ -39,14 +39,14 @@ class NewTodoForm extends React.Component {
   renderErrors() {
     if(!this.state.error) return null;
 
-  return(
-    <span className="new-todo-form-errors">To-do cannot be blank</span>
-  );
-}
+    return(
+      <span className="new-todo-form-errors">To-do cannot be blank</span>
+    );
+  }
 
-clearErrors() {
-  if (this.state.error) this.setState({error: false});
-}
+  clearErrors() {
+    if (this.state.error) this.setState({error: false});
+  }
 
   render() {
     return (

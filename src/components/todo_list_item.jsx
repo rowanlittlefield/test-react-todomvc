@@ -1,13 +1,6 @@
 import React from 'react';
 
 class TodoListItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      completed: false
-    }
-  }
 
   toggleCompleted() {
     const todo = this.props.todo
@@ -23,12 +16,13 @@ class TodoListItem extends React.Component {
   render() {
     const todo = this.props.todo
     const completed = todo.completed;
-    
+
     return (
       <li className={"todo-list-item" + (completed ? ' completed' : '')}>
         <span>{todo.body}</span>
         <input type="checkbox"
-          onClick={this.toggleCompleted.bind(this)} />
+          onClick={this.toggleCompleted.bind(this)}
+          checked={todo.completed}/>
         <button className="todo-list-item-button"
           onClick={this.props.destroy.bind(this, todo.id)}>
           <div>

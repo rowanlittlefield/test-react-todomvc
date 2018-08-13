@@ -5,13 +5,18 @@ class TodoList extends React.Component {
 
   render() {
     const todoListItems = this.props.todos.map((todo, idx) => {
-      return (<TodoListItemContainer key={idx} body={todo.body} id={todo.id} />);
+      return (
+        <TodoListItemContainer key={idx} body={todo.body} id={todo.id} />
+      );
     });
 
     return (
-      <ul id="todo-list" className="todo-list">
-        {todoListItems}
-      </ul>
+      <div>
+        <span>Number of todos: {this.props.todos.length}</span>
+        <ul id="todo-list" className="todo-list">
+          {todoListItems}
+        </ul>
+      </div>
     );
   }
 }

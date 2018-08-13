@@ -8,11 +8,11 @@ class Todo extends React.Component {
   render() {
     return (
       <Provider store={ this.props.store }>
-        <div className="todo-app">
+        <span className="todo-app">
           <h2>To-Do</h2>
           <NewTodoFormContainer />
           <TodoListContainer />
-        </div>
+        </span>
       </Provider>
 
     );

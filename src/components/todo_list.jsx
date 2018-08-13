@@ -1,12 +1,12 @@
 import React from 'react';
 import TodoListItemContainer from '../containers/todo_list_item_container';
 
-class TodoList extends React.Component {
+const TodoList = ({todos}) => {
 
-  renderList() {
-    if(this.props.todos.length === 0) return null;
+  const renderList = () => {
+    if(todos.length === 0) return null;
 
-    const todoListItems = this.props.todos.map((todo, idx) => {
+    const todoListItems = todos.map((todo, idx) => {
       return (
         <TodoListItemContainer key={idx} body={todo.body} id={todo.id} />
       );
@@ -19,18 +19,16 @@ class TodoList extends React.Component {
     );
   }
 
-  render() {
-    const numTodos = this.props.todos.length;
+  const numTodos = todos.length;
 
-    return (
-      <div className="todo-list-div">
-        <span className="todo-list-header">
-          <strong>{numTodos}</strong> item{numTodos === 1 ? '' : 's'}
-        </span>
-        {this.renderList()}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="todo-list-div">
+      <span className="todo-list-header">
+        <strong>{numTodos}</strong> item{numTodos === 1 ? '' : 's'}
+      </span>
+      {renderList()}
+    </div>
+  );
+};
 
 export default TodoList;

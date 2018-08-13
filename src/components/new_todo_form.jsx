@@ -8,7 +8,7 @@ class NewTodoForm extends React.Component {
     this.state = {
       todo: '',
       error: false
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearErrors = this.clearErrors.bind(this);
     this.idIncrementor = 1;

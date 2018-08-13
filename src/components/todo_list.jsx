@@ -4,6 +4,8 @@ import TodoListItemContainer from '../containers/todo_list_item_container';
 class TodoList extends React.Component {
 
   render() {
+    if(this.props.todos.length === 0) return null;
+
     const todoListItems = this.props.todos.map((todo, idx) => {
       return (
         <TodoListItemContainer key={idx} body={todo.body} id={todo.id} />

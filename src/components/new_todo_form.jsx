@@ -19,10 +19,11 @@ class NewTodoForm extends React.Component {
       this.props.createTodo(
         {
           id: this.idIncrementor,
-          body: this.state.todo
+          body: this.state.todo.trim()
         }
       );
       this.idIncrementor += 1;
+      this.setState({todo: ''});
     } else {
       this.setState({error: true})
     }

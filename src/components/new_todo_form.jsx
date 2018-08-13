@@ -38,7 +38,7 @@ class NewTodoForm extends React.Component {
     if(!this.state.error) return null;
 
   return(
-    <span className="todo-form-errors">To-do cannot be blank</span>
+    <span className="new-todo-form-errors">To-do cannot be blank</span>
   );
 }
 
@@ -48,24 +48,23 @@ clearErrors() {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}
-          onClick={this.clearErrors.bind(this)}
-          className="new-todo-form">
-          {this.renderErrors()}
-          <label>
-            <input type="text"
-              className="new-todo-form-input"
-              value={this.state.todo}
-              onChange={this.update('todo')}
-              placeholder="New"
-              autoFocus="true"/>
-          </label>
+      <form onSubmit={this.handleSubmit}
+        onClick={this.clearErrors.bind(this)}
+        onKeyDown={this.clearErrors.bind(this)}
+        className="new-todo-form">
+        {this.renderErrors()}
+        <div className="new-todo-form-inputs">
+          <input type="text"
+            className="new-todo-form-input"
+            value={this.state.todo}
+            onChange={this.update('todo')}
+            placeholder="New"
+            autoFocus="true"/>
           <input className="new-todo-form-submit"
             type="submit"
             value="+" />
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }
